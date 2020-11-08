@@ -7,6 +7,9 @@ jobs:
   build_and_preview:
     runs-on: ubuntu-latest
     steps:
+      - name: Run build script
+        run: ./create-env.production.sh
+        shell: bash
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
