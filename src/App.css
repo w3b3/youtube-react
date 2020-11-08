@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+#hidden-target {
+    width: 100%;
+    height: 65px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-todo-list {
+    font-size: 12px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*HEADER*/
+header {
+    background-color: #eee;
+    color: black;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.app-title-wrapper {
+    position: sticky;
+    top: 0;
+    background-color: #ffe082;
+    margin: 0;
+    color: black;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-.App-link {
-  color: #61dafb;
+.app-title {
+    color: white;
+    background-color: #caae53;
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-user {
+    opacity: 0.5;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/*MAIN*/
+main {
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 100%;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main--channels-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+/*CARD*/
+.card-root {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 0 0.25rem 1rem;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border: 1rem solid #ffe082;
+}
+
+.card-root:last-of-type {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.card-image {
+    margin: 0.5rem auto 0;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.channel-description-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 0 0.5rem
+}
+
+.card-title {
+    text-align: center;
+    color: black;
+    text-decoration: underline;
+}
+
+.channel-id {
+    margin: auto;
+    color: gray;
+    text-align: center;
+    font-size: 0.75rem;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+}
+
+/*CONTROLS*/
+.controls-row {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #caae53;
+}
+
+/*.controls-row > button:focus {*/
+/*    background-color: #ffb300;*/
+/*    color: black;*/
+/*}*/
+
+/*.controls-row > button,*/
+/*.controls-row > select {*/
+/*    width: 45%;*/
+/*    margin: 4px auto;*/
+/*    padding: 4px;*/
+/*    background-color: #ffe54c;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);*/
+/*    text-align: center;*/
+/*    font-family: 'Oswald', sans-serif;*/
+/*    font-weight: bold;*/
+/*    text-transform: uppercase;*/
+/*    color: #c68400;*/
+/*}*/
+
+/*.controls-row > *:disabled {*/
+/*    color: #c4c4c4;*/
+/*    background-color: #a4a2a2;*/
+/*    opacity: 0.8;*/
+/*}*/
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: #caae53;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    box-shadow: 0 0px 6px #00000080;
+}
+
+/*Globals*/
+
+a:disabled, button:disabled, select:disabled {
+    color: #c4c4c4;
+    background-color: #a4a2a2;
+    opacity: 0.8;
+}
+a:focus, button:focus, select:focus {
+    background-color: #ffb300;
+    color: black;
+}
+
+a, button, select {
+    width: 45%;
+    margin: 4px auto;
+    padding: 4px;
+    background-color: #ffe54c;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #c68400;
+    font-size: 0.9rem;
+}
+
+@media all and (min-width: 480px) {
+    .card-root {
+        max-width: 31%;
+    }
+
+    .card-image {
+        margin: 0.5rem 1.5rem;
+    }
+
+    .channel-id {
+        max-width: 100%;
+    }
 }
