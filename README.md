@@ -1,4 +1,2 @@
-# Repo
-- Test
-
-**OK**
+# YT Subscription Manager
+- API key updated
