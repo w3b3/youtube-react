@@ -3,8 +3,19 @@
     height: 65px;
 }
 
-.header-todo-list {
-    font-size: 12px;
+.header-todo-list li:first-child {
+    font-size: 1rem;
+}
+.header-todo-list li {
+    color: navy;
+    font-size: 10px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    /*min-width: 100vw;*/
+    min-height: 100vh;
 }
 
 /*HEADER*/
@@ -56,6 +67,13 @@ main {
 }
 
 /*CARD*/
+.card-placeholder {
+    min-height: 237px; /*THIS IS TO IMPORTANT*/
+    width: 100%;
+    border: 1rem solid #ffe082;
+    margin: 0 0.25rem 1rem;
+}
+
 .card-root {
     display: flex;
     align-items: center;
@@ -69,10 +87,20 @@ main {
 
 .card-root:last-of-type {
     margin-bottom: 0;
-    border-bottom: none;
+}
+/*Move outside the viewport while not rendered/loaded*/
+.card-placeholder img.card-image {
+    transform: translateX(-3000px);
+}
+
+.card-placeholder .card-image {
+    margin: 1rem auto;
+    box-shadow: none;
 }
 
 .card-image {
+    height: 88px;
+    width: 88px;
     margin: 0.5rem auto 0;
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -81,7 +109,7 @@ main {
 .channel-description-wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 100%;
+    width: 100%;
     padding: 0 0 0.5rem
 }
 
@@ -100,7 +128,7 @@ main {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 50%;
+    max-width: 75%;
 }
 
 /*CONTROLS*/
