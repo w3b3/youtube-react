@@ -119,26 +119,28 @@ const ChannelEntry = ({ entry }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   return (
     <article className={imageLoaded ? "card-root" : "card-placeholder"}>
-      {!imageLoaded && (
-        <div className="card-image">
-          <Loader />
+      <section className="card--top-half">
+        {/*{!imageLoaded && (*/}
+        {/*  <div className="card-image">*/}
+        {/*    <Loader />*/}
+        {/*  </div>*/}
+        {/*)}*/}
+        <img
+          className="card-image"
+          loading="lazy"
+          height="88px"
+          width="88px"
+          src={entry.snippet.thumbnails.default.url}
+          alt={entry.snippet.title}
+          onLoad={() => setImageLoaded(true)}
+        />
+        <div className="channel-description-wrapper">
+          <b className="card-title">{entry.snippet.title}</b>
+          <small className="channel-id" title={entry.id}>
+            {entry.id}
+          </small>
         </div>
-      )}
-      <img
-        className="card-image"
-        loading="lazy"
-        height="88px"
-        width="88px"
-        src={entry.snippet.thumbnails.default.url}
-        alt={entry.snippet.title}
-        onLoad={() => setImageLoaded(true)}
-      />
-      <div className="channel-description-wrapper">
-        <b className="card-title">{entry.snippet.title}</b>
-        <small className="channel-id" title={entry.id}>
-          {entry.id}
-        </small>
-      </div>
+      </section>
       <div className="controls-row">
         <button
           onFocus={(e) => {
