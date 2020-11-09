@@ -7,15 +7,9 @@
 }
 
 body {
+    user-select: none;
     scroll-behavior: smooth;
     font-size: 18px;
     margin: 0;
     color: white;
-}
-
-.App {
-    display: flex;
-    flex-direction: column;
-    min-width: 100vw;
-    min-height: 100vh;
 }
